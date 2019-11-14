@@ -22,8 +22,8 @@ Write a function named forEachTwoToThe that produces the same output as your for
 
 const forEachTwoToThe = (arr) => {
   let newArr = [];
-  arr.forEach(num => {
-    newArr.push(Math.pow(2,num));
+  arr.forEach(frogLegs => {
+    newArr.push(Math.pow(2,frogLegs));
   });
   return newArr;
 }
@@ -62,9 +62,11 @@ const evenOdd = (arr) => {
   return arr.map((peram) =>{
     if(typeof(peram)!=='number'){
       return 'N/A'
-    }else if(peram % 2===0){
+    }
+    else if(peram % 2===0){
       return 'even';
-    }else{
+    }
+    else{
       return 'odd'
     }})
 };
