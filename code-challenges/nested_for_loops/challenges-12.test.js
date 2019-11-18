@@ -19,7 +19,7 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  stores.reduce((acc, count) => acc.map((element, index) => element + count[index]));
+  return stores.reduce((acc, count) => acc.map((element, index) => element + count[index]));
 
 };
 
@@ -31,7 +31,7 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  data.map((element, index) => ({ sales: `${element} cookies`, time: hours[index] }))
+  return data.map((element, index) => ({ sales: `${element} cookies`, time: hours[index] }))
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -52,7 +52,7 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  arr.reduce((accumulator, currentVal) => currentVal.store === 'Pet store' ? currentVal.items[1].quantity : null)
+  return arr.reduce((accumulator, currentVal) => currentVal.store === 'Pet store' ? currentVal.items[1].quantity : null)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -108,7 +108,7 @@ const weeklyTemperatures = [
 ];
 
 const averageDailyTemperature = (weather) => {
-  weather.reduce((a, b) => a + b.reduce((a, b) => a + b)/b.length, 0)/weather.length;
+  return weather.reduce((a, b) => a + b.reduce((a, b) => a + b)/b.length, 0)/weather.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -126,7 +126,7 @@ let lowestWeeklyTemperatureData = [
 ];
 
 const lowestWeeklyAverage = (weather) => {
-  weather.map(el => el.reduce((a, b) => a + b)/el.length).reduce((a, b) => b < a ? b : a)
+  return weather.map(el => el.reduce((a, b) => a + b)/el.length).reduce((a, b) => b < a ? b : a)
 };
 
 /* ------------------------------------------------------------------------------------------------
