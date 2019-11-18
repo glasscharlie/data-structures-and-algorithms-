@@ -19,7 +19,7 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  // Solution code here...
+  stores.reduce((acc, count) => acc.map((element, index) => element + count[index]));
 
 };
 
@@ -31,7 +31,7 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  // Solution code here...
+  data.map((element, index) => ({ sales: `${element} cookies`, time: hours[index] }))
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -52,7 +52,7 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  arr.reduce((accumulator, currentVal) => currentVal.store === 'Pet store' ? currentVal.items[1].quantity : null)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -70,7 +70,8 @@ The top row of the board is considered row zero and row numbers increase as they
 ------------------------------------------------------------------------------------------------ */
 
 const battleship = (board, row, col) => {
-  //  Solution code here...
+  if(board[row][col] === '#'){ return 'hit'}
+  else { return 'miss' }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -80,7 +81,16 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 ------------------------------------------------------------------------------------------------ */
 
 const calculateProduct = (numbers) => {
-  // Solution code here...
+  let arr = 1;
+  let otherArray = 1;
+  for(let i = 0; i < numbers.length; i++){
+    for(let j = 0; j < numbers[i].length; j++){
+      otherArray *= numbers[i][j];
+    }
+    arr *= otherArray;
+    otherArray = 1;
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -98,7 +108,7 @@ const weeklyTemperatures = [
 ];
 
 const averageDailyTemperature = (weather) => {
-  // Solution code here...
+  weather.reduce((a, b) => a + b.reduce((a, b) => a + b)/b.length, 0)/weather.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -116,7 +126,7 @@ let lowestWeeklyTemperatureData = [
 ];
 
 const lowestWeeklyAverage = (weather) => {
-  // Solution code here...
+  weather.map(el => el.reduce((a, b) => a + b)/el.length).reduce((a, b) => b < a ? b : a)
 };
 
 /* ------------------------------------------------------------------------------------------------
